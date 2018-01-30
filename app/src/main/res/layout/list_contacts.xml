@@ -34,6 +34,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/call_to_contact"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@android:drawable/stat_sys_phone_call"

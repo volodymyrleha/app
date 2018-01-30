@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ua.org.best_lviv.best.test.personList;
+
 /**
  * Created by Volodymyr on 29.01.2018.
  */
@@ -23,7 +25,6 @@ import java.util.List;
 public class ContactsTabFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     private RecyclerView recyclerView;
-    private List<Person> personList;
     private PersonAdapter personAdapter;
 
     @Override
@@ -51,7 +52,7 @@ public class ContactsTabFragment extends Fragment implements SearchView.OnQueryT
             personList.add(new Person(test.NAMES[i], test.NUMBERS[i]));
         }
 
-        personAdapter = new PersonAdapter(personList);
+        personAdapter = new PersonAdapter(personList, view.getContext());
         recyclerView.setAdapter(personAdapter);
     }
 

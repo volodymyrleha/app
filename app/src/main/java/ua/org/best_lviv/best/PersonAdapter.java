@@ -1,5 +1,6 @@
 package ua.org.best_lviv.best;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,11 @@ import java.util.List;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonViewHolder> {
     private List<Person> personList;
+    Context context;
 
-    public PersonAdapter(List<Person> personList) {
+    public PersonAdapter(List<Person> personList, Context context) {
         this.personList = personList;
+        this.context = context;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonViewHolder> {
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_contacts, parent, false);
-        return new PersonViewHolder(view);
+        return new PersonViewHolder(view, context);
     }
 
     @Override
