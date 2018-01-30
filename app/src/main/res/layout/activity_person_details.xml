@@ -15,17 +15,17 @@
         android:src="@mipmap/ic_launcher_round" />
 
     <TextView
+        android:id="@+id/contact_details_name_textview_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="My name"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@android:color/white"/>
     <TextView
+        android:id="@+id/contact_details_number_textview_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+380975838098"
         android:gravity="center"
         android:textSize="15sp"
         android:textColor="@android:color/white"/>

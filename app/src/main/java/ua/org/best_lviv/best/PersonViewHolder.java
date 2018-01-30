@@ -12,9 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by Volodymyr on 30.01.2018.
@@ -48,12 +45,14 @@ public class PersonViewHolder extends RecyclerView.ViewHolder implements View.On
     public void onClick(View view) {
         int position = getAdapterPosition();
         final Person person = test.personList.get(position);
+        final boolean[] to_call = {false};
 
         //Start call to contact
         ImageView imageView = view.findViewById(R.id.call_to_contact);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                to_call[0] = true;
                 Intent call_to_contact_intent = new Intent(Intent.ACTION_CALL);
                 call_to_contact_intent.setData(Uri.parse("tel:" + person.getNumber()));
 
@@ -65,6 +64,13 @@ public class PersonViewHolder extends RecyclerView.ViewHolder implements View.On
             }
         });
         //End call to contact
+
+        if(!to_call[0]) {
+            Intent open_contact_details_intent = new Intent(view.getContext(), PersonDetails.class);
+            open_contact_details_intent.putExtra("name", person.getName());
+            open_contact_details_intent.putExtra("phone", person.getNumber());
+            view.getContext().startActivity(open_contact_details_intent);
+        }
     }
 
     private boolean checkPermission(String permission) {
