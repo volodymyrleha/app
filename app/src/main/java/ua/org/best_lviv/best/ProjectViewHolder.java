@@ -41,6 +41,10 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
 
     @Override
     public void onClick(View view) {
-
+        int position = getAdapterPosition();
+        final Project project = test.projectsList.get(position);
+        Intent open_project_details_intent = new Intent(view.getContext(), ProjectDetails.class);
+        open_project_details_intent.putExtra("name", project.getName());
+        view.getContext().startActivity(open_project_details_intent);
     }
 }

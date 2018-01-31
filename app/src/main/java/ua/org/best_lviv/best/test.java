@@ -19,5 +19,6 @@ public class test {
             "380975838093", "380975838094", "380975838095", "380975838096"};
 
     public static List<Person> personList;
+    public static List<Project> projectsList;
 
 }

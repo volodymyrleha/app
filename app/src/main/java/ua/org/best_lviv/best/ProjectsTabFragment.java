@@ -7,14 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import static ua.org.best_lviv.best.test.projectsList;
 
 /**
  * Created by Volodymyr on 29.01.2018.
@@ -40,7 +36,7 @@ public class ProjectsTabFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         setHasOptionsMenu(true);
-        List<Project> projectsList = new ArrayList<>();
+        projectsList = new ArrayList<>();
 
         for (int i = 0; i < PROJECT_NAMES.length; i++) {
             projectsList.add(new Project(PROJECT_NAMES[i], "short description"));
